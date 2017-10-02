@@ -1,8 +1,6 @@
-'use strict';
-
 export default class Post {
   constructor(name) {
-    this.name = new String(name);
+    this.name = name;
   }
   content(content) {
     this.content = content;

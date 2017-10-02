@@ -5,7 +5,7 @@ import pgpFactory from 'pg-promise';
 import authorMock from '../mocks/author.json';
 import Post from '../class/post';
 
-var router = express.Router();
+const router = express.Router();
 const pgp = pgpFactory();
 const env = process.env.NODE_ENV || 'development';
 const config = require(path.join(__dirname, '/../config/config.json'))[env];
