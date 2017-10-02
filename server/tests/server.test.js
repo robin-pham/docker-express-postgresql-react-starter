@@ -1,12 +1,12 @@
-var chai = require('chai');
-var chaiHttp = require('chai-http');
-var server = require('../../server/index');
-var should = chai.should();
+import chai from 'chai';
+import chaiHttp from 'chai-http';
+import server from '../index';
+const should = chai.should();
 
 chai.use(chaiHttp);
 
 //Mocks
-const authorMock = require('../../server/mocks/author.json');
+import authorMock from '../../server/mocks/author.json';
 
 describe('REQUESTS TO SERVER', function() {
   it('should object with username, url, description /api/author GET', function(done) {
