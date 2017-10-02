@@ -3,13 +3,16 @@
 > :whale: Docker Express PostgreSql React Starter Kit
 
 ![alt tag](http://tech.orteedev.pl/stack.jpg)
+This starter kit was forked from: https://github.com/Ortee/docker-express-postgresql-react-starter
+
+Main improvements: Node 8.6 and `import` modules;
 
 ## Install:
 ```
 [Docker](https://www.docker.com/)   
 ```
 ```
-[Node v6.X](https://nodejs.org/en/)   
+[Node v8.6](https://nodejs.org/en/)   
 ```
 ```
 [Npm](https://docs.npmjs.com/getting-started/installing-node)   
