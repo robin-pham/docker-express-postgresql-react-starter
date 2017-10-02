@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = {
+export default {
   up: function (queryInterface, Sequelize) {
       return queryInterface.bulkInsert('Posts', [{
         name: 'Test Post from database',

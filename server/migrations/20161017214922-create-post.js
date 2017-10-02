@@ -1,5 +1,6 @@
 'use strict';
-module.exports = {
+
+export default {
   up: function(queryInterface, Sequelize) {
     return queryInterface.createTable('Posts', {
       id: {

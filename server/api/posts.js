@@ -1,16 +1,16 @@
-'use strict';
-var express = require('express');
+import express from 'express';
 var router = express.Router();
-const pgp = require('pg-promise')();
+import pgpFactory from 'pg-promise';
+const pgp = pgpFactory();
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = pgp(process.env[config.use_env_variable]);
 
 //Mocks
-const authorMock = require('../mocks/author.json');
+import authorMock from '../mocks/author.json';
 
 //classes
-var Post = require('../class/post');
+import Post from '../class/post';
 
 router.get('/api/author', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
@@ -53,4 +53,4 @@ router.delete('/api/postremove', function(req, res) {
     });
 });
 
-module.exports = router;
+export default router;
