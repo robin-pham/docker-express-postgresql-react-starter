@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Col, Alert } from 'reactstrap';
 import './alerts.scss';
@@ -32,8 +33,8 @@ class Alerts extends Component {
 }
 
 Alerts.propTypes = {
-  alerts: React.PropTypes.array,
-  removeAlert: React.PropTypes.func,
+  alerts: PropTypes.array,
+  removeAlert: PropTypes.func,
 };
 
 export default Alerts;

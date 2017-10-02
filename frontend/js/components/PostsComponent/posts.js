@@ -1,4 +1,9 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actionCreators from '../../actions/actionCreators';
+
 import { Button, Label, Table, Col } from 'reactstrap';
 import Post from './post';
 import './posts.scss';
@@ -18,10 +23,10 @@ class Posts extends Component {
       <section>
         <Col xs="4" className="addPost-form">
           <form ref="commentForm" onSubmit={this.handleSubmit} className="form-inline">
-              <Label hidden>Name</Label>
-              <input type="text" ref="name" placeholder="name" className="form-control addPost-input"/>
-              <Label hidden>Content</Label>
-              <input type="text" ref="content" placeholder="content" className="form-control addPost-input"/>
+            <Label hidden>Name</Label>
+            <input type="text" ref="name" placeholder="name" className="form-control addPost-input"/>
+            <Label hidden>Content</Label>
+            <input type="text" ref="content" placeholder="content" className="form-control addPost-input"/>
             <Button type="submit" color="success" className="addPost-button">Submit</Button>
           </form>
         </Col>
@@ -56,10 +61,22 @@ class Posts extends Component {
 }
 
 Posts.propTypes = {
-  posts: React.PropTypes.array,
-  addPost: React.PropTypes.func,
-  showPosts: React.PropTypes.func,
+  posts: PropTypes.array,
+  addPost: PropTypes.func,
+  showPosts: PropTypes.func,
 };
 
+function mapStateToProps(state) {
+  return {
+    posts: state.posts,
+    alerts: state.alerts,
+  };
+}
 
-export default Posts;
+function mapDispachToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispachToProps)(Posts);

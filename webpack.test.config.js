@@ -36,7 +36,7 @@ module.exports = {
   },
   output: {
     path: __dirname,
-    filename: '/tests/tests-bundle.js'
+    filename: './tests/tests-bundle.js'
   },
   plugins: debug ? [] : [
    new webpack.HotModuleReplacementPlugin(),
