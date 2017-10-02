@@ -1,5 +1,5 @@
 var jsdom = require('jsdom').jsdom;
-
+var chai = require('chai');
 var exposedProperties = ['window', 'navigator', 'document'];
 
 global.document = jsdom('');
@@ -14,6 +14,7 @@ Object.keys(document.defaultView).forEach((property) => {
 global.navigator = {
     userAgent: 'node.js'
 };
+global.should = chai.should();
 
 documentRef = document;
 

@@ -9,7 +9,7 @@
   "globals": {
     "describe": false,
     "it": false,
-    "should": false,
+    "should": true,
     "beforeEach": false,
     "afterEach": false,
     "COUNTER_HTTP_CLIENT_REQUEST": false,
