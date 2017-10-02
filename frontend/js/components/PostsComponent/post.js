@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 
@@ -26,9 +27,9 @@ class Post extends Component {
 }
 
 Post.propTypes = {
-  i: React.PropTypes.number,
-  post: React.PropTypes.object,
-  removePost: React.PropTypes.func,
+  i: PropTypes.number,
+  post: PropTypes.object,
+  removePost: PropTypes.func,
 };
 
 export default Post;

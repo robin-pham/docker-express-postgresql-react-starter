@@ -11,7 +11,7 @@ module.exports = {
     loaders: [
       {
         test: /\.s?css$/,
-        loaders: ['style','css','sass'] ,
+        loaders: ['style-loader','css-loader','sass-loader'] ,
         exclude: /(node_modules)/,
         include: path.join(__dirname, '/')
       },
@@ -40,7 +40,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '/public'),
-    filename: '/bundle.js'
+    filename: './bundle.js'
   },
   plugins: debug ? []:[
    new webpack.HotModuleReplacementPlugin(),

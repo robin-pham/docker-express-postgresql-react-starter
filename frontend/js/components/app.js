@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
 import Main from './MainComponent/main';
 
+
 function mapStateToProps(state) {
   return {
     posts: state.posts,

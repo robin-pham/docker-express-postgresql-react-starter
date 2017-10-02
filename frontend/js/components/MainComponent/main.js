@@ -1,10 +1,15 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Nav, NavItem, NavLink, Container, Row} from 'reactstrap';
 import './main.scss';
 import Alerts from '../AlertsComponent/alerts';
 
 class Main extends Component {
+  static propTypes = {
+    children: PropTypes.element,
+  };
+
   constructor(props) {
     super(props);
   }
@@ -31,15 +36,11 @@ class Main extends Component {
             </Nav>
           </nav>
           <hr />
-          {React.cloneElement(this.props.children, this.props)}
+          {this.props.children}
         </Row>
       </Container>
     );
   }
 }
-
-Main.propTypes =  {
-  children: React.PropTypes.element,
-};
 
 export default Main;
